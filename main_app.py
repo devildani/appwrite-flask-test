@@ -41,22 +41,26 @@ def home():
 
 @app.route("/add-team")
 def add_team():
-    # result = users.get_sessions('6082912bc4797')
+    result = users.get_sessions('6082912bc4797')
 
-    # result = teams.create_membership('608295cc1e2f3', 'danipratik91@gmail.com', ["meta"], 'https://clientlist.co')
+    result = teams.create_membership('608295cc1e2f3', 'test_team@gmail.com', ["meta"], 'https://clientlist.co')
 
-    return render_template("add-team.html")
+    return "Success. Team member added"
+
+    # return render_template("add-team.html")
 
 
 @app.route("/create-team")
 def create_team():
-    # result = users.get_sessions('6082912bc4797')
+    result = users.get_sessions('6082912bc4797')
     
-    # result = teams.create('Test_102')
+    result = teams.create('Test_102')
 
-    return render_template("create-team.html")
+    return "Success Created Team"
+
+    # return render_template("create-team.html")
+
 
 if __name__=="__main__":
     app.run(debug=True)
-
 

@@ -1,0 +1,38 @@
+<script src="https://cdn.jsdelivr.net/npm/appwrite@2.0.0"></script>
+
+<script>
+    let sdk = new Appwrite();
+    sdk.setEndpoint('https://localhost:5858/v1').setProject('60826fd53aa70');
+    // let promise = sdk.account.create('esdasdasasadasdassdasdasddasdasdasdasdasdmail@example.com', 'password');
+
+    // promise.then(function(response) {
+    //     console.log(response); // Success
+
+    // }, function(error) {
+    //     console.log(error); // Failure
+    // });
+
+    let promise = sdk.account.createSession('esdasdasasadasdassdasdasddasdasdasdasdasdmail@example.com', 'password');
+
+    promise.then(function(response) {
+        console.log(response); // Success
+    }, function(error) {
+        console.log(error); // Failure
+    });
+
+    let promise_2 = sdk.account.get();
+
+    promise_2.then(function(response) {
+        console.log(response); // Success
+    }, function(error) {
+        console.log(error); // Failure
+    });
+
+    let promise_3 = sdk.account.getSessions();
+
+    promise_3.then(function(response) {
+        console.log(response); // Success
+    }, function(error) {
+        console.log(error); // Failure
+    });
+</script>

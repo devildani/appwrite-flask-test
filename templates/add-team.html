@@ -1,0 +1,14 @@
+<script src="https://cdn.jsdelivr.net/npm/appwrite@2.0.0"></script>
+
+<script>
+    let sdk = new Appwrite();
+    sdk.setEndpoint('https://localhost:5858/v1').setProject('60826fd53aa70');
+
+    let promise = sdk.teams.createMembership('[TEAM_ID]', 'email@example.com', [], 'https://example.com');
+
+    promise.then(function(response) {
+        console.log(response); // Success
+    }, function(error) {
+        console.log(error); // Failure
+    });
+</script>
